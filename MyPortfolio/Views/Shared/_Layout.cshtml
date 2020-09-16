@@ -1,4 +1,4 @@
-﻿@model MyPortfolio.Repository.IGeneralRepo
+﻿@model ViewModel
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,31 +66,6 @@
             </div>
         </div>
     </header><!-- header -->
-    @*<header>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyPortfolio</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Portfolio">Portfolio</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>*@
 
     <div id="content" class="content">
         <div class="homepage-personal">
@@ -102,9 +77,6 @@
                         <div id="footer-widget" class="footer-widget-s3 border-bottom-s2 position-relative">
                             <h3 class="widget-title larger lt-sp06 text-white text-center">Let’s try me!</h3>
                             <div class="site-list site-list-center text-center">
-                                @*<a href="#" class="bg-s1"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    <a href="#" class="bg-s2"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                                    <a href="#" class="bg-s3"><span class="icon-dribble"></span></a>*@
 
                                 <a href="@Model.MyDetails.Twitter" class="bg-s1"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                 <a href="@Model.MyDetails.Facebook" class="bg-s2"><i class="fa  fa-facebook-square" aria-hidden="true"></i></a>

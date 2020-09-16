@@ -26,7 +26,6 @@ namespace MyPortfolio
             services.AddControllersWithViews();
             services.AddSingleton<IRepository, MyRepository>();
             services.AddSingleton<IClientRepo, ClientRepo>();
-            services.AddSingleton<IGeneralRepo, General>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

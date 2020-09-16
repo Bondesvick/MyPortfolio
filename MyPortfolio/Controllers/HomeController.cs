@@ -14,29 +14,24 @@ namespace MyPortfolio.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        public readonly MyDetails MyDetails;
-        public readonly List<Client> Clients;
-        private IGeneralRepo model;
 
-        public HomeController(ILogger<HomeController> logger, IRepository repository, IClientRepo clientRepo, IGeneralRepo generalRepo)
+        private readonly ViewModel _model;
+
+        public HomeController(ILogger<HomeController> logger, IRepository repository, IClientRepo clientRepo)
         {
             _logger = logger;
-            MyDetails = repository.GetAllData();
-            Clients = clientRepo.GetClients();
-            model = generalRepo;
 
-            model.Clients = Clients;
-            model.MyDetails = MyDetails;
+            _model = new ViewModel { MyDetails = repository.GetAllData(), Clients = clientRepo.GetClients() };
         }
 
         public IActionResult _Layout()
         {
-            return View(model);
+            return View(_model);
         }
 
         public IActionResult Index()
         {
-            return View(model);
+            return View(_model);
         }
 
         //public IActionResult About()
