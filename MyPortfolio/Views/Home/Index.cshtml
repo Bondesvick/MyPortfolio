@@ -1,0 +1,433 @@
+﻿@*@using static MyPortfolio.Models.MyDetails*@
+
+@*@using System.Security.Cryptography*@
+@model MyPortfolio.Repository.IGeneralRepo
+@*@model MyPortfolio.Models.MyDetails*@
+@*@model MyDetails*@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+
+@*<div class="homepage-personal">*@
+<section class="banner-section s4 two-home" id="home">
+    <div class="container">
+        <div class="content-text position-relative">
+            <div class="animate-element wow delay5 fadeInDown" data-wow-delay="0.3s">
+                <div class="tag color-d1 lt-sp53 mg-b34">Product Designer</div>
+
+                <h1 class="cd-headline clip is-full-width title color-d11 mg-b41">
+                    <span>Hi, </span>
+                    <span class="cd-words-wrapper color-d6">
+                        <b class="is-visible">I’m @Model.MyDetails.FirstName!</b>
+                        <b class="engnr-txt" style="font-size: 6vw;">I’m a @Model.MyDetails.Occupation!</b>
+                    </span>
+                </h1>
+
+                <p class="color-d13 lt-sp02 mg-b51">
+                    Hi, i am @Model.MyDetails.FirstName, a professional @Model.MyDetails.Occupation with over @Model.MyDetails.YearsOfExperience years <br>experience on: <br />@Model.MyDetails.Skills.<br /> Need any help?
+                </p>
+            </div>
+            <div class="animate-element wow delay5 fadeInUp" data-wow-delay="0.3s">
+                <div class="fl-btn btn-general color-s2 btn-hv-border">
+                    <a href="@Model.MyDetails.ResumeLink" class="f-w500 color-d6 border-corner5 lt-sp01 text-two">Download Resume</a>
+                </div>
+            </div>
+        </div>
+        <div class="featured-post border-corner-bl">
+            <img src="@Model.MyDetails.ProfileImage1" alt="images">
+            <div class="site-list has-border text-center animate-element wow delay5 fadeInUp" data-wow-delay="0.3s">
+                <a href="@Model.MyDetails.Twitter" class="bg-s1"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="@Model.MyDetails.Facebook" class="bg-s2"><i class="fa  fa-facebook-square" aria-hidden="true"></i></a>
+                <a href="@Model.MyDetails.GitHub" class="bg-s3"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+                <a href="@Model.MyDetails.Instagram" class="bg-s3"><span class="fa fa-instagram"></span></a>
+                <a href="@Model.MyDetails.LinkedIn" class="bg-s1"><span class="fa fa-linkedin-square"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="iconbox-s4 t2 color-s2 border-corner5 animate-element wow delay5 fadeZooming" data-wow-delay="0.3s">
+        <div class="avatar position-relative">
+            <img src="~/ThemeDoc/images/footer/01.jpg" alt="images">
+        </div>
+        <div class="content-inner">
+            <h4 class="name lt-sp04 mg-b16 text-white position-relative">Available for Project</h4>
+            <div class="fl-btn btn-general">
+                <a href="#" class="text-white border-corner2">Hire Me</a>
+            </div>
+        </div>
+    </div>
+</section><!-- banner-section -->
+
+<section class="about-me t2 s3 shape-am position-relative" id="about">
+    <div class="section-icons">
+        <div class="shape-one"><img src="~/ThemeDoc/images/testimonial/01.png" alt="images"></div>
+        <div class="shape-two"><img src="~/ThemeDoc/images/testimonial/02.png" alt="images"></div>
+        <div class="shape-three"><img src="~/ThemeDoc/images/testimonial/03.png" alt="images"></div>
+        <div class="shape-four"><img src="~/ThemeDoc/images/testimonial/04.png" alt="images"></div>
+        <div class="shape-five"><img src="~/ThemeDoc/images/testimonial/05.png" alt="images"></div>
+        <div class="shape-six"><img src="~/ThemeDoc/images/testimonial/06.png" alt="images"></div>
+    </div>
+    <div class="container">
+        <div class="row position-relative">
+            <div class="col-lg-7 animate-element wow delay5 fadeInDown">
+                <div class="flat-title t2">
+                    <h4 class="sub-title mg-b22">About Me</h4>
+                    <h2 class="title-section color-d11 mg-b41">Hi, I am here to help with your .NET projects!</h2>
+                    <div class="description">
+                        <p class="color-d13 lt-sp01">
+                            @Model.MyDetails.Introduction1
+                        </p>
+                        <p class="color-d13 lt-sp01">
+                            @Model.MyDetails.Introduction2
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="fact">
+                <div class="d-md-flex mg-b40">
+                    <div class="col-left">
+                        <div class="f-item color-s2 counter mg-f-item1">
+                            <div class="counter-box bg-s2 d-flex justify-content-center align-items-center">
+                                <div class="inner">
+                                    <span class="numb-count" data-from="0" data-to="284" data-speed="2000" data-inviewport="yes">284</span>
+                                    <p class="color-d13">Happy Client</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="f-item color-s3 counter mg-f-item2">
+                            <div class="counter-box bg-s2 d-flex justify-content-center align-items-center">
+                                <div class="inner">
+                                    <span class="numb-count" data-from="0" data-to="165" data-speed="2000" data-inviewport="yes">165</span>
+                                    <p class="color-d13">Review</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-right">
+                        <div class="f-item color-s4 counter mg-f-item3">
+                            <div class="counter-box bg-s2 d-flex justify-content-center align-items-center">
+                                <div class="inner">
+                                    <span class="numb-count" data-from="0" data-to="379" data-speed="2000" data-inviewport="yes">379</span>
+                                    <p class="color-d13">Project Complete</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-contact bg-s2 text-center">
+                    <h4 class="title color-d11">Got a project? Let’s talk.</h4>
+                    <a href="mailto: @Model.MyDetails.Email" class="email color-s2 color-d15">@Model.MyDetails.Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="featured-post animate-element wow delay5 fadeInUp" data-wow-delay="0.5s">
+        <img src="~/ThemeDoc/images/section/51.png" alt="images">
+    </div>
+</section><!-- about-me -->
+
+<section class="experienced s3" id="services">
+    <div class="container">
+        <div class="background-inner bg-s2">
+            <div class="flat-title animate-element wow delay5 fadeInDown" data-wow-delay="0.5s">
+                <h2 class="title-section color-d11 mg-b44 text-center">SPECIALIZING IN</h2>
+            </div>
+            <div class="row animate-element wow delay5 fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-4">
+                    <div class="iconbox-s2">
+                        <div class="featured-post mg-b43"><img src="~/ThemeDoc/images/section/20.png" alt="images"></div>
+                        <h3 class="title mg-b21"><a href="#" class="color-d11">Web App &<br /> UI Design</a></h3>
+                        <p class="color-d13">
+                            I'm a professional in @Model.MyDetails.Skills with <br>over @Model.MyDetails.YearsOfExperience years of experience.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="iconbox-s2 active">
+                        <div class="featured-post mg-b42"><img src="~/ThemeDoc/images/section/21.png" alt="images"></div>
+                        <h3 class="title mg-b21"><a href="#" class="color-d11">Mobile UI Design</a></h3>
+                        <p class="color-d13">
+                            I'm a professional Photoshop designer with <br>1 years of experience.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="iconbox-s2">
+                        <div class="featured-post mg-b40"><img src="~/ThemeDoc/images/section/22.png" alt="images"></div>
+                        <h3 class="title mg-b21"><a href="#" class="color-d11">Branding Design</a></h3>
+                        <p class="color-d13">
+                            I'm a professional UX designer with <br>4 years of experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- experienced -->
+
+<section class="get-project s4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="featured-post animate-element wow delay5 fadeZooming" data-wow-delay="0.5s">
+                    <img src="@Model.MyDetails.ProfileImage2" alt="images">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="content-inner animate-element wow delay5 fadeInUp" data-wow-delay="0.5s">
+                    <h2 class="title mg-b14 color-d11">Say Hello!</h2>
+                    <div class="site-list has-border">
+                        <a href="@Model.MyDetails.Twitter" class="bg-s1"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="@Model.MyDetails.Facebook" class="bg-s2"><i class="fa  fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="@Model.MyDetails.GitHub" class="bg-s3"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+                        <a href="@Model.MyDetails.Instagram" class="bg-s3"><span class="fa fa-instagram"></span></a>
+                        <a href="@Model.MyDetails.LinkedIn" class="bg-s1"><span class="fa fa-linkedin-square"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- get-project -->
+
+<section class="flat-education s3 position-relative" id="resume">
+    <div class="container">
+        <div class="flat-title t2 animate-element wow delay5 fadeInDown" data-wow-delay="0.5s">
+            <h4 class="sub-title mg-b13">Educational qualification</h4>
+            <h2 class="title-section color-d11">Education & Experience</h2>
+        </div>
+
+        <div class="animate-element delay5 fadeInDown" data-wow-delay="0.5s">
+            <div class="padding-bottom">
+                <div class="row">
+                    <div class="col-lg-4 last-col animate-element wow delay5 fadeIn" data-wow-delay="0.3s">
+                        <div class="experience-box experience-box-line t3">
+                            <div class="box-inner">
+                                <h3 class="f-info bg-s2 color-d6">@Model.MyDetails.School1</h3>
+                                <div class="exp-wrap">
+                                    <div class="s-info color-d11 mg-b11">@Model.MyDetails.School1Major</div>
+                                    <p class="color-d13">
+                                        @Model.MyDetails.School1Details
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 last-col animate-element wow delay5 fadeIn" data-wow-delay="0.5s">
+                        <div class="experience-box experience-box-line t3">
+                            <div class="box-inner">
+                                <h3 class="f-info bg-s2 color-d6">Udemy</h3>
+                                <div class="exp-wrap">
+                                    <div class="s-info color-d11 mg-b11">Programming with C#</div>
+                                    <p class="color-d13">
+                                        The fundamentals of C# programming language and Object Oriented Programming.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 last-col animate-element wow delay5 fadeIn" data-wow-delay="0.7s">
+                        <div class="experience-box t3">
+                            <div class="box-inner">
+                                <h3 class="f-info bg-s2 color-d6">@Model.MyDetails.School2</h3>
+                                <div class="exp-wrap">
+                                    <div class="s-info color-d11 mg-b11">@Model.MyDetails.School2Major</div>
+                                    <p class="color-d13">
+                                        @Model.MyDetails.School2Details
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 last-col animate-element wow delay5 fadeIn" data-wow-delay="0.8s">
+                    <div class="experience-box experience-box-line t3">
+                        <div class="box-inner">
+                            <h3 class="f-info bg-s2 color-d6">2011 - 2015</h3>
+                            <div class="exp-wrap">
+                                <div class="s-info color-d11 mg-b11">Student at <a href="#">Microsoft</a></div>
+                                <p class="color-d13">
+                                    @Model.MyDetails.School1. Majored in @Model.MyDetails.School1Major.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 last-col animate-element wow delay5 fadeIn" data-wow-delay="1s">
+                    <div class="experience-box experience-box-line t3">
+                        <div class="box-inner">
+                            <h3 class="f-info bg-s2 color-d6">2017 - 2018</h3>
+                            <div class="exp-wrap">
+                                <div class="s-info color-d11 mg-b11">Freelance Developer<a href="#">Apple</a></div>
+                                <p class="color-d13">
+                                    Software development and UI/UX Designing
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 last-col animate-element wow delay5 fadeIn" data-wow-delay="1.2s">
+                    <div class="experience-box t3">
+                        <div class="box-inner">
+                            <h3 class="f-info bg-s2 color-d6">2020 - present</h3>
+                            <div class="exp-wrap">
+                                <div class="s-info color-d11 mg-b11">Interin at<a href="#">Dribble</a></div>
+                                <p class="color-d13">
+                                    @Model.MyDetails.School2 Institute. Learning and building projects with .Net technologies @Model.MyDetails.Skills etc.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- flat-education -->
+
+<section class="flat-case-study s3" id="portfolio">
+    <div class="container">
+        <div class="d-md-flex">
+            <div class="col-left animate-element wow delay5 fadeInDown" data-wow-delay="0.5s">
+                <div class="image-link t2">
+                    <div class="featured-post">
+                        <a href="#"><img src="@Model.MyDetails.Porfolio1Image" alt="images"></a>
+                    </div>
+                    <div class="portfolio-template-link text-center">
+                        <a href="#" class="text-white">Portfolio Template</a>
+                    </div>
+                </div>
+                <div class="image-link t2">
+                    <div class="featured-post">
+                        <a href="@Model.MyDetails.Porfolio2"><img src="@Model.MyDetails.Porfolio2Image" alt="images"></a>
+                    </div>
+                </div>
+                <div class="fl-btn text-center">
+                    <a href="@Model.MyDetails.GitRepos" class="f-w500">Explore More</a>
+                </div>
+            </div>
+            <div class="flat-spacer" data-desktop="0" data-mobile="100" data-smobile="100"></div>
+            <div class="col-right animate-element wow delay5 fadeInUp" data-wow-delay="0.5s">
+                <div class="flat-title t2 mg-b60">
+                    <h4 class="sub-title mg-b13">Portfolio</h4>
+                    <h2 class="title-section color-d11 mg-b20">Few selected works.</h2>
+                    <p class="color-d13">
+                        I'm a professional @Model.MyDetails.Occupation with over @Model.MyDetails.YearsOfExperience years of experience. My main focus is on delivering projects that implements innovative world class features.
+                    </p>
+                </div>
+                <div class="pd-right">
+                    <div class="image-link t2">
+                        <div class="featured-post">
+                            <a href="@Model.MyDetails.Porfolio3"><img src="@Model.MyDetails.Porfolio3Image" alt="images"></a>
+                        </div>
+                    </div>
+                    <div class="image-link t2">
+                        <div class="featured-post">
+                            <a href="#"><img src="~/ThemeDoc/images/section/55.jpg" alt="images"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- flat-case-study -->
+
+<section class="testimonial t2 s2 bg-s2 position-relative" id="testimonial">
+    <div class="background-right bg-cl3">
+        <div class="text-testimonial color-d18">Testimonial</div>
+    </div>
+    <div class="background-transparent bg-cl5"></div>
+    <div class="container d-lg-flex">
+        <div class="col-left animate-element wow delay5 fadeInDown" data-wow-delay="0.5s">
+            <div class="flat-spacer" data-desktop="4" data-mobile="0" data-smobile="0"></div>
+            <div class="wrap-box bg-cl1 position-relative">
+                <div class="featured-post mg-b27"><img src="~/ThemeDoc/images/blog/11.jpg" alt="images"></div>
+                <div class="images-list d-flex justify-content-between">
+                    <img src="~/ThemeDoc/images/blog/04.jpg" alt="images">
+                    <img src="~/ThemeDoc/images/blog/09.jpg" alt="images">
+                    <img src="~/ThemeDoc/images/blog/10.jpg" alt="images">
+                </div>
+                <div class="quote"><img src="~/ThemeDoc/images/testimonial/09.png" alt="images"></div>
+            </div>
+        </div>
+        <div class="col-right animate-element wow delay5 fadeInUp" data-wow-delay="0.5s">
+            <div class="flat-spacer" data-desktop="0" data-mobile="100" data-smobile="100"></div>
+            <div class="flat-title t2">
+                <h4 class="sub-title mg-b13">Testimonial</h4>
+                <h2 class="title-section color-d11 mg-b20">Client Brief</h2>
+            </div>
+            <div class="slider-drop-apps custom-dot dot-s1 none-nav-default mg-dots-s3">
+                <div class="flat-carousel-box data-effect clearfix" data-gap="0" data-column="1" data-column2="1" data-column3="1" data-column4="1" data-column5="1" data-dots="true" data-auto="false" data-nav="false" data-loop="true">
+                    <div class="owl-carousel">
+
+                        @foreach (var client in Model.Clients)
+                        {
+                            <div class="client-info">
+                                <p class="color-d13">
+                                    @client.Brief
+                                </p>
+                                <div class="client-detail color-d13">
+                                    <span class="color-d6 f-w500">@client.Name</span> at CEO Brisben
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- testimonial -->
+<!--<div class="tf-modal-content justify-content-end">
+    <footer id="footer" class="footer footer-s4">
+        <div class="container">
+            <div id="footer-widget" class="footer-widget-s3 border-bottom-s2 position-relative">
+                <h3 class="widget-title larger lt-sp06 text-white text-center">Let’s try me!</h3>
+                <div class="site-list site-list-center text-center">-->
+@*<a href="#" class="bg-s1"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="#" class="bg-s2"><i class="fa fa-behance" aria-hidden="true"></i></a>
+    <a href="#" class="bg-s3"><span class="icon-dribble"></span></a>*@
+
+<!--<a href="https://twitter.com/bondesvick" class="bg-s1"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/bondesvick" class="bg-s2"><i class="fa  fa-facebook-square" aria-hidden="true"></i></a>
+                <a href="https://github.com/Bondesvick" class="bg-s3"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/bondesvick/" class="bg-s3"><span class="fa fa-instagram"></span></a>
+                <a href="https://www.linkedin.com/in/nwike-victor/" class="bg-s1"><span class="fa fa-linkedin-square"></span></a>
+            </div>
+        </div>
+    </div>
+    <div id="bottom" class="bottom-s3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="copyright lt-sp02">
+                        © Roy Design, 2020 All rights reserved.
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="widget-nav-menu color-s2">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index" title="Logo">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#testimonial">Testimonial</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <div class="socials-list color-s2">
+                        <a href="https://www.facebook.com/bondesvick"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/bondesvick/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://twitter.com/bondesvick"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>-->
+<!-- footer -->
+<!--</div>-->
+@*</div>*@
