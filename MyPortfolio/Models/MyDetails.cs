@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace MyPortfolio.Models
+﻿namespace MyPortfolio.Models
 {
     public class MyDetails
     {
@@ -33,10 +28,12 @@ namespace MyPortfolio.Models
         public string Porfolio2 { get; set; }
         public string Porfolio3 { get; set; }
         public string Porfolio4 { get; set; }
+        public string Porfolio5 { get; set; }
         public string GitRepos { get; set; }
         public string Porfolio1Image { get; set; }
         public string Porfolio2Image { get; set; }
         public string Porfolio3Image { get; set; }
         public string Porfolio4Image { get; set; }
+        public string Porfolio5Image { get; set; }
     }
 }

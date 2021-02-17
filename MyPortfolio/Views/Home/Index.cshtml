@@ -1,24 +1,14 @@
-﻿@*@using static MyPortfolio.Models.MyDetails*@
+﻿@model ViewModel
 
-@*@using System.Security.Cryptography*@
-@model ViewModel
-@*@model MyPortfolio.Models.MyDetails*@
-@*@model MyDetails*@
 @{
     ViewData["Title"] = "Home Page";
 }
 
-@*<div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>*@
-
-@*<div class="homepage-personal">*@
 <section class="banner-section s4 two-home" id="home">
     <div class="container">
         <div class="content-text position-relative">
             <div class="animate-element wow delay5 fadeInDown" data-wow-delay="0.3s">
-                <div class="tag color-d1 lt-sp53 mg-b34">Product Designer</div>
+                <div class="tag color-d1 lt-sp53 mg-b34">Full-Stack Engineer</div>
 
                 <h1 class="cd-headline clip is-full-width title color-d11 mg-b41">
                     <span>Hi, </span>
@@ -34,7 +24,7 @@
             </div>
             <div class="animate-element wow delay5 fadeInUp" data-wow-delay="0.3s">
                 <div class="fl-btn btn-general color-s2 btn-hv-border">
-                    <a href="@Model.MyDetails.ResumeLink" class="f-w500 color-d6 border-corner5 lt-sp01 text-two">Download Resume</a>
+                    <a href="@Model.MyDetails.ResumeLink" target="_blank" class="f-w500 color-d6 border-corner5 lt-sp01 text-two">Download Resume</a>
                 </div>
             </div>
         </div>
@@ -53,10 +43,12 @@
         <div class="avatar position-relative">
             <img src="~/ThemeDoc/images/footer/01.jpg" alt="images">
         </div>
+
+        <!---MAil to-->
         <div class="content-inner">
             <h4 class="name lt-sp04 mg-b16 text-white position-relative">Available for Project</h4>
             <div class="fl-btn btn-general">
-                <a href="#" class="text-white border-corner2">Hire Me</a>
+                <a href="mailto: bondesvick@gmail.com" class="text-white border-corner2">Hire Me</a>
             </div>
         </div>
     </div>
@@ -76,7 +68,7 @@
             <div class="col-lg-7 animate-element wow delay5 fadeInDown">
                 <div class="flat-title t2">
                     <h4 class="sub-title mg-b22">About Me</h4>
-                    <h2 class="title-section color-d11 mg-b41">Hi, I am here to help with your .NET projects!</h2>
+                    <h2 class="title-section color-d11 mg-b41">Hi, I am here to help with your @Model.MyDetails.Skills projects!</h2>
                     <div class="description">
                         <p class="color-d13 lt-sp01">
                             @Model.MyDetails.Introduction1
@@ -295,15 +287,20 @@
             <div class="col-left animate-element wow delay5 fadeInDown" data-wow-delay="0.5s">
                 <div class="image-link t2">
                     <div class="featured-post">
-                        <a href="#"><img src="@Model.MyDetails.Porfolio1Image" alt="images"></a>
+                        <a href="@Model.MyDetails.Porfolio1" target="_blank"><img src="@Model.MyDetails.Porfolio1Image" alt="images"></a>
                     </div>
                     <div class="portfolio-template-link text-center">
-                        <a href="#" class="text-white">Portfolio Template</a>
+                        <a href="@Model.MyDetails.Porfolio1" class="text-white" target="_blank">Portfolio Template</a>
                     </div>
                 </div>
                 <div class="image-link t2">
                     <div class="featured-post">
-                        <a href="@Model.MyDetails.Porfolio2"><img src="@Model.MyDetails.Porfolio2Image" alt="images"></a>
+                        <a href="@Model.MyDetails.Porfolio2" target="_blank"><img src="@Model.MyDetails.Porfolio2Image" alt="images"></a>
+                    </div>
+                </div>
+                <div class="image-link t2">
+                    <div class="featured-post">
+                        <a href="@Model.MyDetails.Porfolio5" target="_blank"><img src="@Model.MyDetails.Porfolio5Image" alt="images"></a>
                     </div>
                 </div>
                 <div class="fl-btn text-center">
@@ -322,12 +319,12 @@
                 <div class="pd-right">
                     <div class="image-link t2">
                         <div class="featured-post">
-                            <a href="@Model.MyDetails.Porfolio3"><img src="@Model.MyDetails.Porfolio3Image" alt="images"></a>
+                            <a href="@Model.MyDetails.Porfolio3" target="_blank"><img src="@Model.MyDetails.Porfolio3Image" alt="images"></a>
                         </div>
                     </div>
                     <div class="image-link t2">
                         <div class="featured-post">
-                            <a href="#"><img src="~/ThemeDoc/images/section/55.jpg" alt="images"></a>
+                            <a href="@Model.MyDetails.Porfolio4" target="_blank"><img src="@Model.MyDetails.Porfolio4Image" alt="images"></a>
                         </div>
                     </div>
                 </div>
@@ -335,99 +332,48 @@
         </div>
     </div>
 </section><!-- flat-case-study -->
-
-<section class="testimonial t2 s2 bg-s2 position-relative" id="testimonial">
-    <div class="background-right bg-cl3">
-        <div class="text-testimonial color-d18">Testimonial</div>
-    </div>
-    <div class="background-transparent bg-cl5"></div>
-    <div class="container d-lg-flex">
-        <div class="col-left animate-element wow delay5 fadeInDown" data-wow-delay="0.5s">
-            <div class="flat-spacer" data-desktop="4" data-mobile="0" data-smobile="0"></div>
-            <div class="wrap-box bg-cl1 position-relative">
-                <div class="featured-post mg-b27"><img src="~/ThemeDoc/images/blog/11.jpg" alt="images"></div>
-                <div class="images-list d-flex justify-content-between">
-                    <img src="~/ThemeDoc/images/blog/04.jpg" alt="images">
-                    <img src="~/ThemeDoc/images/blog/09.jpg" alt="images">
-                    <img src="~/ThemeDoc/images/blog/10.jpg" alt="images">
-                </div>
-                <div class="quote"><img src="~/ThemeDoc/images/testimonial/09.png" alt="images"></div>
-            </div>
+@*<section class="testimonial t2 s2 bg-s2 position-relative" id="testimonial">
+        <div class="background-right bg-cl3">
+            <div class="text-testimonial color-d18">Testimonial</div>
         </div>
-        <div class="col-right animate-element wow delay5 fadeInUp" data-wow-delay="0.5s">
-            <div class="flat-spacer" data-desktop="0" data-mobile="100" data-smobile="100"></div>
-            <div class="flat-title t2">
-                <h4 class="sub-title mg-b13">Testimonial</h4>
-                <h2 class="title-section color-d11 mg-b20">Client Brief</h2>
+        <div class="background-transparent bg-cl5"></div>
+        <div class="container d-lg-flex">
+            <div class="col-left animate-element wow delay5 fadeInDown" data-wow-delay="0.5s">
+                <div class="flat-spacer" data-desktop="4" data-mobile="0" data-smobile="0"></div>
+                <div class="wrap-box bg-cl1 position-relative">
+                    <div class="featured-post mg-b27"><img src="~/ThemeDoc/images/blog/11.jpg" alt="images"></div>
+                    <div class="images-list d-flex justify-content-between">
+                        <img src="~/ThemeDoc/images/blog/04.jpg" alt="images">
+                        <img src="~/ThemeDoc/images/blog/09.jpg" alt="images">
+                        <img src="~/ThemeDoc/images/blog/10.jpg" alt="images">
+                    </div>
+                    <div class="quote"><img src="~/ThemeDoc/images/testimonial/09.png" alt="images"></div>
+                </div>
             </div>
-            <div class="slider-drop-apps custom-dot dot-s1 none-nav-default mg-dots-s3">
-                <div class="flat-carousel-box data-effect clearfix" data-gap="0" data-column="1" data-column2="1" data-column3="1" data-column4="1" data-column5="1" data-dots="true" data-auto="false" data-nav="false" data-loop="true">
-                    <div class="owl-carousel">
+            <div class="col-right animate-element wow delay5 fadeInUp" data-wow-delay="0.5s">
+                <div class="flat-spacer" data-desktop="0" data-mobile="100" data-smobile="100"></div>
+                <div class="flat-title t2">
+                    <h4 class="sub-title mg-b13">Testimonial</h4>
+                    <h2 class="title-section color-d11 mg-b20">Client Brief</h2>
+                </div>
+                <div class="slider-drop-apps custom-dot dot-s1 none-nav-default mg-dots-s3">
+                    <div class="flat-carousel-box data-effect clearfix" data-gap="0" data-column="1" data-column2="1" data-column3="1" data-column4="1" data-column5="1" data-dots="true" data-auto="false" data-nav="false" data-loop="true">
+                        <div class="owl-carousel">
 
-                        @foreach (var client in Model.Clients)
-                        {
-                            <div class="client-info">
-                                <p class="color-d13">
-                                    @client.Brief
-                                </p>
-                                <div class="client-detail color-d13">
-                                    <span class="color-d6 f-w500">@client.Name</span> at CEO Brisben
+                            @foreach (var client in Model.Clients)
+                            {
+                                <div class="client-info">
+                                    <p class="color-d13">
+                                        @client.Brief
+                                    </p>
+                                    <div class="client-detail color-d13">
+                                        <span class="color-d6 f-w500">@client.Name</span> at CEO Brisben
+                                    </div>
                                 </div>
-                            </div>
-                        }
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section><!-- testimonial -->
-<!--<div class="tf-modal-content justify-content-end">
-    <footer id="footer" class="footer footer-s4">
-        <div class="container">
-            <div id="footer-widget" class="footer-widget-s3 border-bottom-s2 position-relative">
-                <h3 class="widget-title larger lt-sp06 text-white text-center">Let’s try me!</h3>
-                <div class="site-list site-list-center text-center">-->
-@*<a href="#" class="bg-s1"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-    <a href="#" class="bg-s2"><i class="fa fa-behance" aria-hidden="true"></i></a>
-    <a href="#" class="bg-s3"><span class="icon-dribble"></span></a>*@
-
-<!--<a href="https://twitter.com/bondesvick" class="bg-s1"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="https://www.facebook.com/bondesvick" class="bg-s2"><i class="fa  fa-facebook-square" aria-hidden="true"></i></a>
-                <a href="https://github.com/Bondesvick" class="bg-s3"><i class="fa fa-github-square" aria-hidden="true"></i></a>
-                <a href="https://www.instagram.com/bondesvick/" class="bg-s3"><span class="fa fa-instagram"></span></a>
-                <a href="https://www.linkedin.com/in/nwike-victor/" class="bg-s1"><span class="fa fa-linkedin-square"></span></a>
-            </div>
-        </div>
-    </div>
-    <div id="bottom" class="bottom-s3">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="copyright lt-sp02">
-                        © Roy Design, 2020 All rights reserved.
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="widget-nav-menu color-s2">
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index" title="Logo">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#testimonial">Testimonial</a></li>
-                        <li><a href="#resume">Resume</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2">
-                    <div class="socials-list color-s2">
-                        <a href="https://www.facebook.com/bondesvick"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="https://www.instagram.com/bondesvick/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="https://twitter.com/bondesvick"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>-->
-<!-- footer -->
-<!--</div>-->
-@*</div>*@
+    </section>*@<!-- testimonial -->
